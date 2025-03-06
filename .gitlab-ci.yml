@@ -7,7 +7,7 @@ linter:
   stage: "linter"
   image: "golangci/golangci-lint:latest-alpine"
   script:
-    - "golangci-lint run"
+    - "golangci-lint run *.go"
 
 testing:
   stage: "testing"
