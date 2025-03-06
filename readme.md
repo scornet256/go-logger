@@ -12,8 +12,7 @@ logger.SetDebug(true)             # optional; default false
 # Usage examples
 ```
 logger.Print("Simple log message withouth error", nil)
-logger.Fatal("Fatal log message with error", err)
-
+logger.Fatal("Fatal log message with error and exits the program", err)
 ```
 Will be printed like this:
 ```
@@ -24,5 +23,5 @@ Will be printed like this:
 
 # Return functions
 ```
-logger.GetAppName() will return the current used app name as a string.
-logger.GetDebug() will return the current debug setting as a bool.
+logger.GetAppName()  # will return the current used app name as a string.
+logger.GetDebug()    # will return the current debug setting as a bool.
