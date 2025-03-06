@@ -15,4 +15,4 @@ testing:
     - "linter"
   image: "cr.simoncor.net/siempie/go-build:latest"
   script:
-    - "go test cmd/logger/*.go"
+    - "go test *.go"
