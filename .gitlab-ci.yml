@@ -1,0 +1,18 @@
+image: "golang:alpine"
+stages:
+  - "linter"
+  - "testing"
+
+linter:
+  stage: "linter"
+  image: "golangci/golangci-lint:latest-alpine"
+  script:
+    - "golangci-lint run"
+
+testing:
+  stage: "testing"
+  needs:
+    - "linter"
+  image: "cr.simoncor.net/siempie/go-build:latest"
+  script:
+    - "go test cmd/logger/*.go"
