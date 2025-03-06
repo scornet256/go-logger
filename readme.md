@@ -1,24 +1,29 @@
 # Logger
 
 This simple Golang package can be used for common logging functionality.
+Only when debug is on, non fatal errors will be shown.
 
-# Options
-
+# Install
 ```
-logger.SetAppName("todo-app")     # optional; default "MyApp"
-logger.SetDebug(true)             # optional; default false
+go get -u github.com/scornet256/go-logger
 ```
 
-# Usage examples
+# Basic usage
 ```
 logger.Print("Simple log message withouth error", nil)
 logger.Fatal("Fatal log message with error and exits the program", err)
 ```
-Will be printed like this:
+Will output like this:
 ```
-2025/12/01 11:17:35 todo-app | LOG: Simple log message withouth error
-2025/12/01 11:17:35 todo-app | FATAL: Fatal log message with error
-2025/12/01 11:17:35 todo-app | ERROR: <insert value of err> 
+2025/12/01 11:17:35 MyApp | LOG: Simple log message withouth error
+2025/12/01 11:17:35 MyApp | FATAL: Fatal log message with error
+2025/12/01 11:17:35 MyApp | ERROR: <insert value of err> 
+```
+
+# Options
+```
+logger.SetAppName("todo-app")     # optional; default "MyApp"
+logger.SetDebug(true)             # optional; default false
 ```
 
 # Return functions
