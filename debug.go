@@ -1,4 +1,4 @@
-package logging
+package logger
 
 import (
 	"io"
@@ -7,7 +7,7 @@ import (
 
 var debug bool
 
-// Enables debug logging if set to true. Default is false.
+// Enables debug logger if set to true. Default is false.
 func SetDebug(debugSetting bool) {
 	debug = debugSetting
 	if !debug {
