@@ -17,3 +17,7 @@ changelog:
       regexp: "^fix"
     - title: "🛠 Maintenance"
       regexp: "^(chore|refactor)"
+
+# build
+builds:
+  - skip: true

@@ -18,6 +18,10 @@ changelog:
     - title: "🛠 Maintenance"
       regexp: "^(chore|refactor)"
 
+# build
+builds:
+  - skip: true
+
 # gitlab
 gitlab_urls:
   api: "https://gitlab.simoncor.net/api/v4/"
