@@ -2,6 +2,7 @@ image: "golang:alpine"
 stages:
   - "linter"
   - "testing"
+  - "releasing"
 
 linter:
   stage: "linter"
@@ -16,3 +17,17 @@ testing:
   image: "cr.simoncor.net/siempie/go-build:latest"
   script:
     - "go test *.go"
+
+releasing:
+  stage: "releasing"
+  needs:
+    - "testing"
+  image:
+    name: "goreleaser/goreleaser:v2.8.2"
+    entrypoint: [""]
+  rules:
+    - if: '$CI_COMMIT_TAG'
+  variables:
+    GITLAB_TOKEN: '$GORELEASER_GITLAB_TOKEN'
+  script:
+    - "goreleaser release --clean"
