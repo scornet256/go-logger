@@ -5,7 +5,7 @@ Only when debug is on, non fatal errors will be shown.
 
 # Install
 ```
-go get -u github.com/scornet256/go-logger
+go get -u git.simoncor.net/golang/logger
 ```
 
 # Basic usage
